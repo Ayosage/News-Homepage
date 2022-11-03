@@ -1,0 +1,321 @@
+/*
+## Layout
+
+The designs were created to the following widths:
+
+- Mobile: 375px
+- Desktop: 1440px
+
+## Colors
+
+### Primary
+
+- Soft orange: hsl(35, 77%, 62%)
+- Soft red: hsl(5, 85%, 63%)
+
+### Neutral
+
+Off-white: hsl(36, 100%, 99%)
+Grayish blue: hsl(233, 8%, 79%)
+Dark grayish blue: hsl(236, 13%, 42%)
+Very dark blue: hsl(240, 100%, 5%)
+
+## Typography
+
+### Body Copy
+
+- Font size (paragraph): 15px
+
+### Font
+
+- Family: [Inter](https://fonts.google.com/specimen/Inter)
+- Weights: 400, 700, 800
+
+*/
+:root{
+
+    --softOrange: hsl(35, 77%, 62%);
+    --softRed: hsl(5, 85%, 63%);
+    --offWhite: hsl(36, 100%, 99%);
+    --greyish:  hsl(233, 8%, 79%);
+    --darkGrey: hsl(236, 13%, 42%);
+    --darkBlue: hsl(240, 100%, 5%);
+
+}
+html{
+    font-family: 'Inter', sans-serif;
+}
+body{
+    display: grid;
+    grid-template-columns: 1fr repeat(3, 2fr) 1fr;
+    grid-column-gap: 1.5rem;
+    grid-template-rows: auto;
+    font-size: 15px;
+    background-color: var(--offWhite);
+    font-family: 'Inter', sans-serif;
+ 
+}
+
+header{
+    grid-column-start: 2;
+    grid-column-end: 5;
+    grid-row-start: 1;
+}
+
+nav{
+    margin: 4rem 0rem 4rem 1rem;
+    display: flex;
+    justify-content: space-between;
+    
+}
+
+.menu, .menu-close{
+    display:none;
+}
+
+.check{
+    position: absolute;
+    top: -10rem;
+    right: -10rem;
+ }
+a{
+    text-decoration: none;
+    color: var(--darkBlue);
+}
+
+a:hover{
+    color: var(--softOrange);
+}
+
+ul{
+    justify-self: end;
+    align-self: end;
+    display: flex;
+    list-style: none;
+   
+}
+
+li {
+    text-decoration: none;
+    margin-left: 2rem;
+   
+    font-size: 1rem;
+}
+
+
+
+.logo{
+    
+    align-self: center;
+}
+
+.banner{
+    grid-column-start: 2;
+    grid-column-end: 4;
+    grid-row-start: 2;
+    grid-row-end: 3;
+    object-fit: cover;
+    width: 100%;
+}
+
+.rundown{
+    grid-column-start: 4;
+    grid-column-end: 5;
+    grid-row-start: 2;
+    grid-row-end: 4;
+    height: auto;
+
+    background-color: var(--darkBlue);
+    color: var(--offWhite);
+    padding: 1rem;
+}
+
+.rundown h1{
+    font-size: 2rem;
+    color: var(--softOrange);
+    margin-top: 0.5rem;
+    font-weight: 500;
+  
+}
+
+.rundown article:not(:last-child){
+    border-bottom: 1px solid var(--offWhite);
+}
+
+.rundown article a{
+    color: var(--offWhite);
+}
+
+.rundown article a:hover{
+    color: var(--softOrange);
+}
+
+.rundown article p{
+    margin-bottom: 3rem;
+}
+
+.one{
+    grid-column-start: 2;
+    grid-column-end: 3;
+    grid-row-start: 4;
+    grid-row-end: 4;
+}
+
+.two{
+    grid-column-start: 3;
+    grid-column-end: 4;
+    grid-row-start: 4;
+    grid-row-end: 4;
+}
+
+.three{
+    grid-column-start: 4;
+    grid-column-end: 5;
+    grid-row-start: 4;
+    grid-row-end: 4;
+}
+
+.article {
+    
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    margin-top: 2rem;
+   
+}
+
+.article img{
+    height: 60%;
+    width: auto;
+    margin-right: 1rem;
+    
+}
+
+.article div h2{
+    margin: 0 0 1rem 0;
+    font-size: 2rem;
+    color: var(--greyish);
+}
+
+
+
+.hdln{
+    grid-column-start: 2;
+    grid-column-end: 2;
+    grid-row-start: 3;
+    grid-row-end: 4;
+    padding-right: 1rem;
+    font-size: 3rem;
+    margin: 0;
+}
+
+.content{
+    grid-column-start: 3;
+    grid-column-end: 4;
+    grid-row-start: 3;
+    grid-row-end: 4;
+    font-size: 16px;
+    letter-spacing: 1.5px;
+    height: auto;
+    
+}
+
+.content p {
+    margin: 0;
+}
+
+.content button{
+    background-color: var(--softRed);
+    color: var(--offWhite);
+    border: none;
+    padding: 1rem 3rem 1rem 3rem;
+    margin-top: 2rem;
+    letter-spacing: 1.5px;
+}
+
+.content button:hover{
+    background-color: var(--darkBlue);
+}
+
+footer{
+    grid-column-start: 2;
+    grid-row-start: 6;
+}
+
+
+
+@media only screen and (max-width: 600px){
+    body{
+       display: flex;
+       flex-direction: column;
+     
+    }
+
+    .menu, .menu-close{
+        display: initial;
+    }
+    
+    nav{
+        margin: 1rem 0.5rem 1rem 0.5rem;
+    }
+
+    .menu{
+        height: 2rem;
+        width: 3rem;
+        align-self: center;
+    }
+
+    
+
+
+    ul{
+
+       position: absolute;
+       flex-direction: column;
+       top: 0;
+       right: -100%;
+       height: 100vh;
+       width: 80vw;
+       background-color: var(--offWhite);
+       transition: all .2s;
+    }
+
+    ul .menu{
+        height: 2rem;
+        width: 2rem;
+        align-self: flex-end;
+        margin: 1rem;
+    }
+
+    ul li{
+        font-size: 2rem;
+        margin: 1rem;
+    }
+
+
+    .banner{
+        
+        margin: 1rem 0 1rem 0;
+        height: 15rem;
+    }
+
+    .content p{
+        margin-top: 1rem;
+        line-height: 2;
+    }
+
+    .content button{
+        margin-bottom: 3rem;
+    }
+
+    .rundown{
+        margin-bottom: 2rem;
+    }
+    .article{
+        margin-top: 1rem;
+    }
+
+    .pos-right{
+        right: 0;
+    }
+}
